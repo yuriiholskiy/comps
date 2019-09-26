@@ -1,24 +1,37 @@
-import CApp from '@/components/CApp';
+// /app
+import CApp from '@/components/app/CApp';
+import CFooter from '@/components/app/CFooter';
+import CToolbar from '@/components/app/CToolbar';
 
-import CButton from '@/components/globals/CButton';
-import CIcon from '@/components/globals/CIcon';
-import CBanner from '@/components/CBanner';
-import CModal from '@/components/CModal';
-import CSnackbar from '@/components/CSnackbar';
-import CProgress from '@/components/CProgress';
-import CSpinner from '@/components/CSpinner';
+// /grid
+import CContainer from '@/components/grid/CContainer';
+import CRow from '@/components/grid/CRow';
+import CCol from '@/components/grid/CCol';
 
-import CContainer from '@/components/globals/CContainer';
-import CRow from '@/components/globals/CRow';
-import CCol from '@/components/globals/CCol';
+// /nav
+import CNavDrawer from '@/components/nav/CNavDrawer';
+import COverlay from '@/components/nav/COverlay';
 
-import CNavDrawer from '@/components/CNavDrawer';
-import CToolbar from '@/components/CToolbar';
-import COverlay from '@/components/COverlay';
+// /progress&spinners
+import CProgress from '@/components/progress&spinners/CProgress';
+import CSpinner from '@/components/progress&spinners/CSpinner';
 
+// /modal&banner
+import CBanner from '@/components/modal&banner/CBanner';
+import CModal from '@/components/modal&banner/CModal';
+
+// /btn&icon
+import CButton from '@/components/btn&icon/CButton';
+import CIcon from '@/components/btn&icon/CIcon';
+
+// /snackbar
+import CSnackbar from '@/components/snackbar/CSnackbar';
+
+// /list
 import CListGroup from '@/components/list/CListGroup';
 import CListItem from '@/components/list/CListItem';
 
+// /forms
 import CForm from '@/components/forms/CForm';
 import CFormGroup from '@/components/forms/CFormGroup';
 import CFormInput from '@/components/forms/CFormInput';
@@ -27,6 +40,7 @@ import CFormRadio from '@/components/forms/CFormRadio';
 
 export default {
 	CApp,
+	CFooter,
 	CButton,
 	CIcon,
 	CBanner,
@@ -48,6 +62,7 @@ export default {
 
 export {
 	CApp,
+	CFooter,
 	CButton,
 	CIcon,
 	CBanner,

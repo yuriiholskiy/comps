@@ -14,13 +14,22 @@
 			    						@click="drawer = !drawer">
 			    		<img src="@/assets/icons/menu-burger.png" alt="Toggle nav drawer button">
 			    	</c-button>
-			    	<p class="ml-2">
-			    		created by Golskyi Yurii
-			    	</p>
 			    </div>
 			    <div class="toolbar-right hidden-md-and-down">
-			    	<c-button to="/" theme="success" class="mr-1">Home</c-button>
-			   	 	<c-button to="/about">About</c-button>
+			    	<c-button :to="{name: 'home'}" 
+			    						theme="success" 
+			    						class="mr-1">
+			    		Home
+			    	</c-button>
+			    	<c-button :to="{name: 'components'}" 
+			    						theme="secondary" 
+			    						v-ripple 
+			    						class="mr-1">
+				    	Components
+				    </c-button>
+			   	 	<c-button :to="{name: 'about'}">
+				   	 	About
+				   	 </c-button>
 			    </div>
 			  </c-toolbar>
 
@@ -34,6 +43,12 @@
 									 drawer
 									 @click="drawer = false">
 				</c-overlay>
+
+				<c-footer>
+					Hello, i'm footer.
+					created by Yurii Golskyi. All rights reserved;
+					{{ new Date().getFullYear() }}
+				</c-footer>
 		</c-app>
 	</transition>
 
@@ -72,6 +87,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
  	overflow-x: hidden;
   position: relative;
+  padding-bottom: 3rem;
   z-index: 2;
   color: #2c3e50;
   transition: .31s margin;

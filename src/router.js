@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import ComponentsPage from './views/ComponentsPage.vue'
 
 Vue.use(Router)
 
@@ -11,15 +11,20 @@ export default new Router({
     return savedPosition ? savedPosition : { x: 0, y: 0 };
   },
   routes: [
+  	{
+  		path: '/',
+  		name: 'home',
+  		component: () => import(/* webpackChunkName: 'home' */ './views/HomePage.vue')
+  	},
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: '/components',
+      name: 'components',
+      component: () => import(/* webpackChunkName: 'components' */ './views/ComponentsPage.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      component: () => import(/* webpackChunkName: 'about' */ './views/AboutPage.vue')
+    } 
   ]
 })

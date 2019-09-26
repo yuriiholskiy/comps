@@ -201,3 +201,16 @@
 .title {
 	font-size: 1rem;
 }
+
+.full-height {
+	min-height: calc(100vh - 80px);
+}
+
+.bg-light {
+	background-color: darken(#fff, 5%);
+	color: darken(#fff, 50%);
+}
+.bg-dark {
+	background-color: darken(#fff, 70%);
+	color: #fff;
+}
