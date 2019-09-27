@@ -400,19 +400,11 @@ export default {
       	s4: false,
       },
     }
-  },
-  methods: {
-  	openSnackbar(i) {
-
-  	}
   }
 }
 </script>
 <style>
-  .h-full {
-    height: 1000px;
-  }
-  .home {
-    text-align: center;
-  }
+.home {
+  text-align: center;
+}
 </style>
