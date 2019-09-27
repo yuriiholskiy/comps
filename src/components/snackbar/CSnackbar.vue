@@ -58,11 +58,9 @@ export default {
 			if(this.value) {
 				this.timer = setTimeout(() => {
 					this.$emit('input', !this.value);
-					console.log('[emit]: gaga');
 				}, this.timeout);
 			} else {
 				clearTimeout(this.timer);
-				console.log('[clear]: gaga');
 			}
 		}
 	}
@@ -75,7 +73,7 @@ export default {
     display: flex;
     align-items: center;
     color: #fff;
-    z-index: 1000;
+    z-index: 10000;
     font-size: .9rem;
     &-top {
     	top: 1rem;
