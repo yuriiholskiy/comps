@@ -14,6 +14,9 @@
 			    						@click="drawer = !drawer">
 			    		<img src="@/assets/icons/menu-burger.png" alt="Toggle nav drawer button">
 			    	</c-button>
+			    	<h1 class="display ml-2">
+		    			Comps
+		    		</h1>
 			    </div>
 			    <div class="toolbar-right hidden-md-and-down">
 			    	<c-button :to="{name: 'home'}" 
