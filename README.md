@@ -9,6 +9,7 @@ awesome ripple directive,
 lazyload-images directive (IntersectionObserver).
 
 
-#about themes
+about themes
 on different components like button, banners, lists, etc. have a prop called theme
+
 you can check all themes in file themes.mixin.js.
