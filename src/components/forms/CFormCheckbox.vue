@@ -6,11 +6,11 @@
 					 		themes[theme],
 					 		{switcher: switcher}
 					 ]"
+					 v-bind="$attrs"
+					 v-on="$listeners"
 					 :value="value"
 					 :checked="shouldBeChecked"
-					 v-bind="$attrs"
 					 @change="updateCheckboxInput" 
-					 v-on="$listeners"
 					 />
 		<label class="c-form-checkbox-label" :for="labelFor" :class="{switcher: switcher}">
 			<slot></slot>
@@ -26,7 +26,7 @@ export default {
 	name: 'CFormCheckbox',
 	model: {
 		prop: 'modelChecked',
-		event: 'change'
+		event: 'modelCheckedEvent'
 	},
 	props: {
 		modelChecked: {
@@ -37,9 +37,11 @@ export default {
 			default: ''
 		},
 		trueValue: {
+			type: Boolean,
 			default: true
 		},
 		falseValue: {
+			type: Boolean,
 			default: false
 		},
 		theme: {
@@ -74,9 +76,9 @@ export default {
 				} else {
 					newValue.splice(newValue.indexOf(this.value), 1);
 				}
-				this.$emit('change', newValue);
+				this.$emit('modelCheckedEvent', newValue);
 			} else {
-				this.$emit('change', isChecked ? this.trueValue : this.falseValue);
+				this.$emit('modelCheckedEvent', isChecked ? this.trueValue : this.falseValue);
 			}		
 		}
 	}

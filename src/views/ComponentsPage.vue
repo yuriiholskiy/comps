@@ -79,7 +79,7 @@
           <c-button btn v-ripple loading theme="success"></c-button>
         </c-col>
         <c-col xs="size-6" sm="size-6" md="size-3" class="mt-sm-1 mt-xs-1">
-          <c-button btn v-ripple loading="'#fff'" theme="warning"></c-button>
+          <c-button btn v-ripple loading theme="warning"></c-button>
         </c-col>
       </c-row>
     </section>
@@ -194,14 +194,21 @@
       <h1 class="display-1">Forms and fields</h1>
       <c-row justify="xs-center" class="mt-1">
         <c-col xs="size-12" sm="size-8" md="size-12">
-          <c-form>
+          <c-form @submit.prevent="submitForm">
           	<c-form-group label="Text" labelFor="text">
-          		<c-form-input autocomplete type="text0" id="text" placeholder="Type..." v-model="formItems.input" />
+          		<c-form-input autocomplete 
+                            type="text" 
+                            id="text" 
+                            placeholder="Type..." 
+                            v-model="formItems.input" />
           		<span>{{ formItems.input }}</span>
           	</c-form-group>
           	<c-form-group label="Password" labelFor="pass" class="mt-1">
-          		<c-form-input autocomplete type="password" id="pass" placeholder="shh, it's password..." v-model="formItems.password" />
-          		<span>{{ formItems.password }}</span>
+          		<c-form-input autocomplete 
+                            type="password" 
+                            id="pass" 
+                            placeholder="shh, it's password..." 
+                            v-model="formItems.password" />
           	</c-form-group>
           	<c-form-group label="Checkbox" labelFor="check" class="mt-1">
           		<c-row justify="xs-center">
@@ -315,6 +322,7 @@
 	          		</c-col>
           		</c-row>
           	</c-form-group>
+            <c-button btn class="mt-1" type="submit">Submit</c-button>
           </c-form>
         </c-col>
       </c-row>
@@ -399,6 +407,18 @@ export default {
       	s3: false,
       	s4: false,
       },
+    }
+  },
+  methods: {
+    submitForm() {
+      console.log(this.formItems.check1);
+      const formData = {
+        title: this.formItems.input,
+        check1: this.formItems.check1,
+        check2: this.formItems.check2,
+        check3: this.formItems.check3,
+      };
+      console.log(formData);
     }
   }
 }
