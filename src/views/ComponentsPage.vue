@@ -176,7 +176,7 @@
       </c-row>
       <h3 class="mt-1">Ripple</h3> 
       <c-row justify="xs-center" class="mt-1">
-        <c-col xs="size-4" sm="size-10" md="size-12">
+        <c-col xs="size-12" sm="size-10" md="size-12">
           <c-list-group>
             <c-list-item v-for="(item, index) in listItems" 
             						 :key="item"
@@ -411,7 +411,6 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log(this.formItems.check1);
       const formData = {
         title: this.formItems.input,
         check1: this.formItems.check1,
