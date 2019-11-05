@@ -1,15 +1,15 @@
 import options from './comps.options';
+import '@/assets/style.scss';
 
 const { components, directives }  = options;
 
 export default {
 	install(Vue) {
-		for(let name in components) {
+		Object.keys(components).forEach(name => {
 			Vue.component(name, components[name]);
-		}
-		
-		for(let directiveName in directives) {
+		});
+		Object.keys(directives).forEach(directiveName => {
 			Vue.directive(directiveName, directives[directiveName]);
-		}
+		});
 	}
 }

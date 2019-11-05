@@ -47,11 +47,11 @@
 									 @click="drawer = false">
 				</c-overlay>
 
-				<c-footer>
+				<!-- <c-footer>
 					Hello, i'm footer.
 					created by Yurii Golskyi. All rights reserved;
 					{{ new Date().getFullYear() }}
-				</c-footer>
+				</c-footer> -->
 		</c-app>
 	</transition>
 
