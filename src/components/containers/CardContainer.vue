@@ -1,5 +1,5 @@
 <template>
-	<section class="cards mt-2">
+  <section class="cards mt-2">
     <h2 class="display-1">Cards</h2>
     <c-row justify="xs-center" class="mt-1">
       <c-col xs="size-12" sm="size-6" md="size-6">
