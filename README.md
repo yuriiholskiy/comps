@@ -1,9 +1,7 @@
-# comps
+# @vue/comps
 
-a simple vue component library
+## Simple vue components library
 
-on this moment I create a 22 several components and I will create more and more.
+23 several components and 2 directives.
 
-also create a two directives: 
-awesome ripple directive,
-lazyload-images directive (IntersectionObserver).
+
