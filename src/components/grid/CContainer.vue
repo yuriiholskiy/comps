@@ -1,7 +1,7 @@
 <script>
 export default {
-	functional: true,
 	name: "CContainer",
+	functional: true,
 	render(h, { data, children }) {
 		return h('div', { class: ['c-container', data.staticClass] }, children);
 	}
