@@ -1,38 +1,13 @@
-<template>
-	<article class="c-card" :style="cardStyles">
-		<img class="c-card-image" :src="imageSrc" :alt="altInfo" />
-		<div class="c-card-body">
-			<h3 class="c-card-title">
-				<slot name="title">
-					Striped cat
-				</slot>
-			</h3>
-      <div class="c-card-description">
-      	<slot name="description">
-      		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, hic?
-      		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto sed unde fugit provident eligendi officiis quae? Quis, sit eius asperiores.
-      	</slot>
-      </div>
-      <div class="c-card-action" v-if="action">
-      	<slot name="action">
-					<c-button btn theme="secondary">
-						Action
-					</c-button>
-      	</slot>
-      </div>
-		</div>
-	</article>
-</template>
-
 <script>
 export default {
 	name: 'CCard',
+	functional: true,
 	props: {
 		imageSrc: {
 			type: String,
-			default: require('@/assets/images/cat.jpg')
+			default: 'images/cat.jpg'
 		},
-		altInfo: {
+		imageAlt: {
 			type: String,
 			default: 'Image'
 		},
@@ -49,12 +24,41 @@ export default {
 			default: false
 		}
 	},
-	computed: {
-		cardStyles() {
-			return {
-				backgroundColor: this.bgColor
-			}
-		}
+	render(h, { data, props, slots}) {
+		const titleSlot = slots().title ? slots().title : ['Default title'];
+		const descrSlot = slots().description ? slots().description : ['Default description'];
+		const actionSlot = slots().action ? slots().action : ['Default action'];
+
+		const action = props.action ? h('div', {
+			class: 'c-card-action'
+		}, actionSlot) : null;
+
+		const cardBody = [
+			h('h3', {
+				class: 'c-card-title'
+			}, titleSlot),
+			h('div', {
+				class: 'c-card-description'
+			}, descrSlot),
+			action
+		];
+		console.log();
+		const children = [
+			h('img', {
+				class: 'c-card-image',
+				attrs: {
+					src: require(`@/assets/${props.imageSrc}`),
+					alt: props.imageAlt
+				}
+			}),
+			h('div', {
+				class: 'c-card-body'
+			}, cardBody)
+		];
+		return h('article', {
+			class: ['c-card', data.staticClass, data.class],
+			style: [ {'background-color': props.bgColor} ]
+		}, children);
 	}
 }
 </script>

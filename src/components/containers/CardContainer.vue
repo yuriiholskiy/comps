@@ -23,7 +23,7 @@
     <h2 class="display-1 mt-2">Cards with action</h2>
     <c-row justify="xs-center" class="mt-1">
       <c-col xs="size-12" sm="size-10" md="size-6">
-        <c-card action :image-src="require('@/assets/images/cat3.jpg')" image-alt="Another cat">
+        <c-card action image-src="images/cat3.jpg" image-alt="Another cat">
           <template #title>
             Another cool title
           </template>
@@ -38,7 +38,7 @@
         </c-card>
       </c-col>
       <c-col xs="size-12" sm="size-10" md="size-6">
-        <c-card action :image-src="require('@/assets/images/cat3.jpg')" image-alt="Another cat">
+        <c-card action image-src="images/cat3.jpg" image-alt="Another cat">
           <template #title>
             Another cool title
           </template>
@@ -53,7 +53,7 @@
         </c-card>
       </c-col>
       <c-col xs="size-12" sm="size-10" md="size-6" class="mt-sm-1 mt-xs-1">
-        <c-card action :image-src="require('@/assets/images/cat2.jpg')" image-alt="Another cat">
+        <c-card action image-src="images/cat2.jpg" image-alt="Another cat">
           <template #title>
             Another cool title
           </template>
@@ -68,7 +68,7 @@
         </c-card>
       </c-col>
       <c-col xs="size-12" sm="size-10" md="size-6" class="mt-sm-1 mt-xs-1">
-        <c-card action :image-src="require('@/assets/images/cat2.jpg')" image-alt="Another cat 2">
+        <c-card action image-src="images/cat2.jpg" image-alt="Another cat 2">
           <template #title>
             Another cool title
           </template>
