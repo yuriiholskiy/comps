@@ -36,7 +36,7 @@
     <!--/cards -->
     <card-container />
     <!--/cards -->
-
+        
     <p class="display mt-2">
       to be continued...
     </p>

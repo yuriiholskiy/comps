@@ -1,59 +1,56 @@
 <template>
-	<transition name="preload" mode="out-in">
-		<c-spinner theme="dark" key="preload" size="10" v-if="loading"></c-spinner>
-		<c-app v-else>
-			  <c-nav-drawer v-model="drawer" dark :position="pos" push color="'#555'">
-			  	<c-button to="/" theme="success" class="mr-0">Home</c-button>
-			   	<c-button to="/about" class="mt-1">About</c-button>
-			  </c-nav-drawer>
-			  <c-toolbar>
-			  	<div class="toolbar-left">
-			    	<c-button btn
-			    						theme="secondary"
-			    						flat
-			    						@click="drawer = !drawer">
-			    		<img src="@/assets/icons/menu-burger.png" alt="Toggle nav drawer button">
-			    	</c-button>
-			    	<h1 class="display ml-2">
-		    			Comps
-		    		</h1>
-			    </div>
-			    <div class="toolbar-right hidden-md-and-down">
-			    	<c-button :to="{name: 'home'}" 
-			    						theme="success" 
-			    						class="mr-1">
-			    		Home
-			    	</c-button>
-			    	<c-button :to="{name: 'components'}" 
-			    						theme="secondary" 
-			    						v-ripple 
-			    						class="mr-1">
-				    	Components
-				    </c-button>
-			   	 	<c-button :to="{name: 'about'}">
-				   	 	About
-				   	 </c-button>
-			    </div>
-			  </c-toolbar>
+	<c-app>
+		  <c-nav-drawer v-model="drawer" dark :position="pos" push color="'#555'">
+		  	<c-button to="/" theme="success" class="mr-0">Home</c-button>
+		   	<c-button to="/about" class="mt-1">About</c-button>
+		  </c-nav-drawer>
+		  <c-toolbar>
+		  	<div class="toolbar-left">
+		    	<c-button btn
+		    						theme="secondary"
+		    						flat
+		    						@click="drawer = !drawer">
+		    		<img src="@/assets/icons/menu-burger.png" alt="Toggle nav drawer button">
+		    	</c-button>
+		    	<h1 class="display ml-2">
+	    			Comps
+	    		</h1>
+		    </div>
+		    <div class="toolbar-right hidden-md-and-down">
+		    	<c-button :to="{name: 'home'}" 
+		    						theme="success" 
+		    						class="mr-1">
+		    		Home
+		    	</c-button>
+		    	<c-button :to="{name: 'components'}" 
+		    						theme="secondary" 
+		    						v-ripple 
+		    						class="mr-1">
+			    	Components
+			    </c-button>
+		   	 	<c-button :to="{name: 'about'}">
+			   	 	About
+			   	 </c-button>
+		    </div>
+		  </c-toolbar>
 
-			  <c-container>
-			    <transition name="fade" mode="out-in">
-			    	<router-view class="pt-5"/>
-			    </transition>
-			  </c-container>
+		  <c-container>
+		    <transition name="fade" mode="out-in">
+		    	<router-view class="pt-5"/>
+		    </transition>
+		  </c-container>
 
-				<c-overlay v-if="drawer"
-									 drawer
-									 @click="drawer = false">
-				</c-overlay>
+			<c-overlay v-if="drawer"
+								 drawer
+								 @click="drawer = false">
+			</c-overlay>
 
-				<!-- <c-footer>
-					Hello, i'm footer.
-					created by Yurii Golskyi. All rights reserved;
-					{{ new Date().getFullYear() }}
-				</c-footer> -->
-		</c-app>
-	</transition>
+			<!-- <c-footer>
+				Hello, i'm footer.
+				created by Yurii Golskyi. All rights reserved;
+				{{ new Date().getFullYear() }}
+			</c-footer> -->
+	</c-app>
 
 </template>
 
@@ -73,11 +70,6 @@ export default {
   	switchDrawerPos() {
   		this.pos === 'left' ? this.pos = 'right' : this.pos = 'left';
   	}
-  },
-  created() {
-    setTimeout(() => {
-      this.loading = false;
-    }, 1000);
   }
 }
 </script>
@@ -90,13 +82,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
  	overflow-x: hidden;
   position: relative;
-  padding-bottom: 3rem;
   z-index: 2;
   color: #2c3e50;
   transition: .31s margin;
-}
-.preload {
-	height: 100vh;
 }
 @media (min-width: 576px) {
 	.push-content-left {
@@ -110,7 +98,6 @@ export default {
 	display: flex;
 	align-items: center;
 }
-
 
 .fade-enter-active,
 .fade-leave-active {

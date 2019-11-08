@@ -1,7 +1,7 @@
 <template>
   <div class="c-icon-wrap" :class="[{'left': left}, {'right': right}]">
     <svg class="c-icon" :width="width" :height="height" >
-      <use v-bind="{'xlink:href':'/icons-sprite.svg#' + name, fill: color, stroke: strokeColor}" />
+      <use v-bind="svgBindings" />
     </svg>
   </div>
 </template>
@@ -17,6 +17,10 @@ export default {
     height: {
       type: [Number, String],
       default: 24
+    },
+    sprite: {
+    	type: String,
+    	default: 'icons-sprite.svg'
     },
     name: {
       type: String,
@@ -38,6 +42,15 @@ export default {
       type: String,
       default: 'currentColor'
     }
+  },
+  computed: {
+  	svgBindings() {
+  		return {
+  			'xlink:href': `/${this.sprite}#${this.name}`, 
+  			fill: this.color, 
+  			stroke: this.strokeColor
+  		};
+  	}
   }
 }
 </script>
