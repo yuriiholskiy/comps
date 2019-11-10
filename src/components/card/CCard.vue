@@ -22,14 +22,20 @@ export default {
 		action: {
 			type: Boolean,
 			default: false
+		},
+		ripple: {
+			type: Boolean,
+			default: false
 		}
 	},
-	render(h, { data, props, slots}) {
+	render(h, { data, props, slots, listeners }) {
 		const titleSlot = slots().title ? slots().title : ['Default title'];
 		const descrSlot = slots().description ? slots().description : ['Default description'];
 		const actionSlot = slots().action ? slots().action : ['Default action'];
 
-		const action = props.action ? h('div', {
+		const { imageSrc, imageAlt, maxWidth, bgColor, action, ripple } = props;
+
+		const actionHtml = action ? h('div', {
 			class: 'c-card-action'
 		}, actionSlot) : null;
 
@@ -40,15 +46,14 @@ export default {
 			h('div', {
 				class: 'c-card-description'
 			}, descrSlot),
-			action
+			actionHtml
 		];
-		console.log();
 		const children = [
 			h('img', {
 				class: 'c-card-image',
 				attrs: {
-					src: require(`@/assets/${props.imageSrc}`),
-					alt: props.imageAlt
+					src: require(`@/assets/${imageSrc}`),
+					alt: imageAlt
 				}
 			}),
 			h('div', {
@@ -57,7 +62,14 @@ export default {
 		];
 		return h('article', {
 			class: ['c-card', data.staticClass, data.class],
-			style: [ {'background-color': props.bgColor} ]
+			style: [ {'background-color': bgColor} ],
+			directives: ripple ? [
+				{
+					name: 'ripple',
+					value: bgColor
+				}
+			] : null,
+			on: listeners
 		}, children);
 	}
 }

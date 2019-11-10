@@ -41,6 +41,9 @@ import CFormRadio from '@/components/forms/CFormRadio';
 // /cards
 import CCard from '@/components/card/CCard';
 
+// /chips
+import CChip from '@/components/chips/CChip'
+
 export default {
 	CApp,
 	CFooter,
@@ -62,5 +65,6 @@ export default {
 
 	CForm, CFormGroup, CFormInput, CFormCheckbox, CFormRadio,
 
-	CCard
+	CCard,
+	CChip
 }
