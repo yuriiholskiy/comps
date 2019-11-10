@@ -7,8 +7,10 @@
 </template>
 
 <script>
+import themesMixin from '@/mixins/themes.mixin';	
 export default {
 	name: 'CListItem',
+	mixins: [themesMixin('list-item')],
 	props: {
 		active: {
 			type: Boolean,
@@ -25,20 +27,6 @@ export default {
 		flex: {
 			type: Boolean,
 			required: false
-		}
-	},
-	data() {
-		return {
-			themes: {
-				primary: 'c-list-item-primary',
-				secondary: 'c-list-item-secondary',
-				warning: 'c-list-item-warning',
-				danger: 'c-list-item-danger',
-				success: 'c-list-item-success',
-				dark: 'c-list-item-dark',
-				light: 'c-list-item-light'
-			},
-
 		}
 	}
 }
