@@ -46,7 +46,7 @@ export default {
   computed: {
   	svgBindings() {
   		return {
-  			'xlink:href': `/${this.sprite}#${this.name}`, 
+  			'xlink:href': `${this.sprite}#${this.name}`, 
   			fill: this.color, 
   			stroke: this.strokeColor
   		};

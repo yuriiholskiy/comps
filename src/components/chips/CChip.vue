@@ -1,14 +1,14 @@
 <template>
 	<div class="c-chip" :class="[themes[theme]]" v-on="$listeners">
 		<c-icon v-if="iconName && !iconRight"
-						sprite="sprite.svg" 
+						:sprite="require('@/assets/icons/sprite.svg')" 
 						:name="iconName" 
 						width="20"
 						height="20" 
 						left />
 		<slot>Default</slot>
 		<c-icon v-if="iconName && iconRight"
-						sprite="sprite.svg" 
+						:sprite="require('@/assets/icons/sprite.svg')" 
 						:name="iconName" 
 						width="20"
 						height="20" 
