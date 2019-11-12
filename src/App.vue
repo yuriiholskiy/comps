@@ -1,8 +1,8 @@
 <template>
 	<c-app>
 		<c-nav-drawer v-model="drawer" dark :position="pos" push color="'#555'">
-			<c-button to="/" theme="success" class="mr-0">Home</c-button>
-			<c-button to="/about" class="mt-1">About</c-button>
+			<c-button :to="{name: 'home'}" theme="success" class="mr-0">Home</c-button>
+			<c-button :to="{name: 'components'}" class="mt-1">Components</c-button>
 		</c-nav-drawer>
 		<c-toolbar>
 			<div class="toolbar-left">
@@ -17,19 +17,16 @@
 				</h1>
 			</div>
 			<div class="toolbar-right hidden-md-and-down">
-				<c-button :to="{name: 'home'}" 
+				<c-button :to="{name: 'home'}"
+									v-ripple 
 									theme="success" 
 									class="mr-1">
 					Home
 				</c-button>
 				<c-button :to="{name: 'components'}" 
-									theme="secondary" 
 									v-ripple 
 									class="mr-1">
 					Components
-				</c-button>
-				<c-button :to="{name: 'about'}">
-					About
 				</c-button>
 			</div>
 		</c-toolbar>
