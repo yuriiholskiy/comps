@@ -1,4 +1,4 @@
-// components 
+// components
 import components from './comps.components';
 // components
 
@@ -7,6 +7,6 @@ import directives from './comps.directives';
 // directives
 
 export default {
-	components,
-	directives
-}
+  components,
+  directives,
+};

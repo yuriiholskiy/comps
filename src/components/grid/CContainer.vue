@@ -1,19 +1,23 @@
 <script>
 export default {
-	name: "CContainer",
-	functional: true,
-	render(h, { data, children }) {
-		return h('div', { class: ['c-container', data.staticClass] }, children);
-	}
-}
+  name: 'CContainer',
+  functional: true,
+  render(h, { data, children }) {
+    return h(
+      'div',
+      { class: ['c-container', data.staticClass] },
+      children,
+    );
+  },
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .c-container {
-	max-width: #{$container-width};
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: #{$grid-gap};
-	padding-right: #{$grid-gap};
+  max-width: #{$container-width};
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: #{$grid-gap};
+  padding-right: #{$grid-gap};
 }
 </style>

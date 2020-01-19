@@ -42,29 +42,36 @@ import CFormRadio from '@/components/forms/CFormRadio';
 import CCard from '@/components/card/CCard';
 
 // /chips
-import CChip from '@/components/chips/CChip'
+import CChip from '@/components/chips/CChip';
 
 export default {
-	CApp,
-	CFooter,
-	CButton,
-	CIcon,
-	CBanner,
-	CModal,
-	CSnackbar,
-	CProgress,
-	CSpinner,
+  CApp,
+  CFooter,
+  CButton,
+  CIcon,
+  CBanner,
+  CModal,
+  CSnackbar,
+  CProgress,
+  CSpinner,
 
-	CContainer, CRow, CCol,
+  CContainer,
+  CRow,
+  CCol,
 
-	CNavDrawer,
-	COverlay,
-	CToolbar,
+  CNavDrawer,
+  COverlay,
+  CToolbar,
 
-	CListGroup, CListItem,
+  CListGroup,
+  CListItem,
 
-	CForm, CFormGroup, CFormInput, CFormCheckbox, CFormRadio,
+  CForm,
+  CFormGroup,
+  CFormInput,
+  CFormCheckbox,
+  CFormRadio,
 
-	CCard,
-	CChip
-}
+  CCard,
+  CChip,
+};

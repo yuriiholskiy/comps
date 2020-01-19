@@ -1,23 +1,30 @@
 {
-	"name": "@vue/comps",
-	"version": "0.1.0",
-	"description": "Simple UI library for Vue.js",
-	"private": false,
-	"scripts": {
-		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build",
-		"build:wc": "vue-cli-service build --target wc 'src/components/**/*.vue'"
-	},
-	"dependencies": {
-		"core-js": "^2.6.5",
-		"vue": "^2.6.10",
-		"vue-router": "^3.0.3"
-	},
-	"devDependencies": {
-		"@vue/cli-plugin-babel": "^3.0.5",
-		"@vue/cli-service": "^3.0.5",
-		"node-sass": "^4.9.0",
-		"sass-loader": "^7.1.0",
-		"vue-template-compiler": "^2.6.10"
-	}
+  "name": "@vue/comps",
+  "version": "0.1.0",
+  "description": "Simple UI library for Vue.js",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:wc": "vue-cli-service build --target wc 'src/components/**/*.vue'",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-unit-jest": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
+  }
 }

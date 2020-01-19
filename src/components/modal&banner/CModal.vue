@@ -1,8 +1,12 @@
 <template>
-	<transition name="modal-fade">
-    <div class="c-modal-backdrop" v-if="value" @click.self="$emit('close-modal', !value)">
+  <transition name="modal-fade">
+    <div
+      class="c-modal-backdrop"
+      v-if="value"
+      @click.self="$emit('close-modal', !value)"
+    >
       <div class="c-modal">
-      	 <header class="c-modal-header">
+        <header class="c-modal-header">
           <slot name="header">
             This is the default title!
           </slot>
@@ -24,17 +28,17 @@
 
 <script>
 export default {
-	name: 'CModal',
-	model: {
-		event: 'close-modal'
-	},
-	props: {
-		value: Boolean
-	},
-	beforeDestroy() {
-		this.$emit('close-modal', false);
-	}
-}
+  name: 'CModal',
+  model: {
+    event: 'close-modal',
+  },
+  props: {
+    value: Boolean,
+  },
+  beforeDestroy() {
+    this.$emit('close-modal', false);
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -52,7 +56,7 @@ export default {
 }
 
 .c-modal {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   overflow-x: auto;
   display: flex;
   flex-direction: column;
@@ -93,6 +97,6 @@ export default {
 
 .modal-fade-enter-active,
 .modal-fade-leave-active {
-  transition: opacity .5s ease
+  transition: opacity 0.5s ease;
 }
 </style>

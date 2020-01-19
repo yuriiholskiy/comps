@@ -1,6 +1,9 @@
 <template>
-  <div class="c-icon-wrap" :class="[{'left': left}, {'right': right}]">
-    <svg class="c-icon" :width="width" :height="height" >
+  <div
+    class="c-icon-wrap"
+    :class="[{ left: left }, { right: right }]"
+  >
+    <svg class="c-icon" :width="width" :height="height">
       <use v-bind="svgBindings" />
     </svg>
   </div>
@@ -12,50 +15,50 @@ export default {
   props: {
     width: {
       type: [Number, String],
-      default: 24
+      default: 24,
     },
     height: {
       type: [Number, String],
-      default: 24
+      default: 24,
     },
     sprite: {
-    	type: String,
-    	default: 'icons-sprite.svg'
+      type: String,
+      default: 'icons-sprite.svg',
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     right: {
       type: Boolean,
-      default: false
+      default: false,
     },
     left: {
       type: Boolean,
-      default: false
+      default: false,
     },
     color: {
       type: String,
-      default: 'none'
+      default: 'none',
     },
     strokeColor: {
       type: String,
-      default: 'currentColor'
-    }
+      default: 'currentColor',
+    },
   },
   computed: {
-  	svgBindings() {
-  		return {
-  			'xlink:href': `${this.sprite}#${this.name}`, 
-  			fill: this.color, 
-  			stroke: this.strokeColor
-  		};
-  	}
-  }
-}
+    svgBindings() {
+      return {
+        'xlink:href': `${this.sprite}#${this.name}`,
+        fill: this.color,
+        stroke: this.strokeColor,
+      };
+    },
+  },
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .c-icon-wrap {
   display: inline-flex;
   align-items: center;
@@ -64,10 +67,10 @@ export default {
   font-weight: 600;
 
   &.right {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
   &.left {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 }
 .c-icon {
