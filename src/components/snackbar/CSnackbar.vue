@@ -35,7 +35,7 @@ export default {
     };
   },
   watch: {
-    value(val) {
+    value() {
       this.toggleSnackbar();
     },
   },

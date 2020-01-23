@@ -15,6 +15,10 @@ describe('CCard component', () => {
     expect(wrapper.classes()).toContain('c-card');
   });
 
+  it('should be a functional component', () => {
+    expect(wrapper.isFunctionalComponent).toBe(true);
+  });
+
   it('should find image and have class', () => {
     expect(
       wrapper.find('.c-card-image').classes(),

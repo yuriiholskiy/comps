@@ -40,4 +40,12 @@ describe('CSnackbar component', () => {
     wrapper.setProps({ axisX: 'left' });
     expect(wrapper.props().axisX).toBe('left');
   });
+
+  it('should have a classes computed property', () => {
+    expect(wrapper.vm.classes).toBeTruthy();
+  });
+  it('should have a transitionAxis computed property', () => {
+    const expected = 'snackbar-bottom';
+    expect(wrapper.vm.transitionAxis).toBe(expected);
+  });
 });
