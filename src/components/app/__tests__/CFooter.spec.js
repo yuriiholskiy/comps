@@ -7,4 +7,8 @@ describe('CFooter component', () => {
   it('should have class c-footer', () => {
     expect(wrapper.classes()).toContain('c-footer');
   });
+
+  it('should be a functional component', () => {
+    expect(wrapper.isFunctionalComponent).toBe(true);
+  });
 });

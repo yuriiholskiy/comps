@@ -8,6 +8,10 @@ describe('CApp component', () => {
     expect(wrapper.attributes().id).toBe('app');
   });
 
+  it('should be a functional component', () => {
+    expect(wrapper.isFunctionalComponent).toBe(true);
+  });
+
   it('should render aside element inside app', () => {
     expect(wrapper.find('.c-nav-drawer')).toBeTruthy();
   });

@@ -25,4 +25,14 @@ describe('CToolbar component', () => {
   it('should have props theme', () => {
     expect(wrapper.props().theme).toBeTruthy();
   });
+
+  it('should set prop height to 90px', () => {
+    wrapper.setProps({ height: '90px' });
+    expect(wrapper.props().height).toBe('90px');
+  });
+
+  it('should set prop theme to warning', () => {
+    wrapper.setProps({ theme: 'warning' });
+    expect(wrapper.props().theme).toBe('warning');
+  });
 });

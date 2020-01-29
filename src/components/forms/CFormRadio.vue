@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     labelFor() {
-      return this.$attrs.id;
+      return this.$attrs.id || 'label';
     },
     shouldBeChecked() {
       return this.modelChecked === this.value;

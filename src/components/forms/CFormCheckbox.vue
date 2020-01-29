@@ -57,7 +57,7 @@ export default {
   },
   computed: {
     labelFor() {
-      return this.$attrs.id;
+      return this.$attrs.id || 'label';
     },
     shouldBeChecked() {
       if (this.modelChecked instanceof Array) {
